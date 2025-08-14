@@ -10,9 +10,7 @@ class SimpleProducer:
     def __init__(self, topic, duration=None):
         self.topic = topic
         self.duration = duration if duration is not None else 60
-        self.conf = {'bootstrap.servers': BROKER_LST,
-                     'compression.type': 'lz4'
-                     }
+        self.conf = {'bootstrap.servers': BROKER_LST}
 
         self.producer = Producer(self.conf)
 
